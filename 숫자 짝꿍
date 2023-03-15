@@ -8,7 +8,6 @@ class Solution {
         int[] xArr = new int[10]; // X 숫자별 개수 파악용 배열
         int[] yArr = new int[10]; // X 숫자별 개수 파악용 배열
         
-        // 숫자별로 배열 SET
         for(String x : X.split("")){
             xArr[Integer.parseInt(x)]++;
         }
