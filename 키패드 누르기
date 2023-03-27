@@ -1,0 +1,63 @@
+package Programmers;
+
+import java.util.Arrays;
+
+public class Programmers5 {
+	public static void main(String[] args) {
+		int[] numbers= {7,0,8,2,8,3,1,5,7,6,2};
+		String hand = "left";
+		StringBuilder answer= new StringBuilder();
+		int n=1;
+		int l,r, l2, r2;
+		
+		int [][] arr = new int [4][3];
+		
+		for(int i=0; i<4;i++) { // 2차원 배열에 값 넣기
+			for(int j=0;j<3;j++) {
+				arr[i][j]=n++;
+			}
+		}
+		System.out.println(Arrays.deepToString(arr));
+		
+		l=10;
+		r=12;
+		
+		for(int i=0;i<numbers.length;i++) {
+			switch(numbers[i]%3) {
+				case 0:
+					answer.append("R");
+					r=numbers[i];
+					break;
+				case 1:
+					answer.append("L");
+					l=numbers[i];
+					break;
+				case 2:
+					l2=(numbers[i]>l)?numbers[i]-l:l-numbers[i];
+					r2=(numbers[i]>r)?numbers[i]-r:r-numbers[i];
+					
+					if(l2>r2&&l2-r2!=2) {
+						answer.append("R");
+						r=numbers[i];
+					}
+					else if(r2>l2&&r2-l2!=2) {
+						answer.append("L");
+						l=numbers[i];
+					}
+					else if(r2==l2||r2-l2==2||l2-r2==2) {
+						if(hand == "right"&&r2-l2==2) {
+							answer.append("R");
+							r=numbers[i];
+						}
+						else 
+						{
+							answer.append("L");
+							l=numbers[i];
+						}
+					}
+					break;
+			}
+		}
+		System.out.println(answer);
+	}
+}
