@@ -1,0 +1,34 @@
+package Programmers0531;
+
+public class Programmers0531 {
+public static void main(String[] args) {
+	String s = "-1 -2 -3 -4";
+	String answer = "";
+	
+	
+	
+	String number[]= s.split(" ");
+	
+	
+	int min = Integer.parseInt(number[0]);
+	int max = Integer.parseInt(number[0]);
+	
+	for(int i=1;i<number.length;i++) {
+		int n = Integer.parseInt(number[i]);
+		if(n<min) {
+			min = n;
+		}
+		else if(max<n) {
+			max = n;
+		}
+	}
+	
+	String str = Integer.toString(max);
+	answer = Integer.toString(min);
+	
+	answer += " ";
+	answer = answer.concat(str);
+	
+	System.out.println(answer);
+}
+}
