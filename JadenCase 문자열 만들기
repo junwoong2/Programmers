@@ -3,15 +3,13 @@ import java.util.*;
 class Solution {
     public String solution(String s) {
         String answer = "";
-    	
-    	// " " 기준으로 문자열 잘라서 배열에 넣음
+
     	String[] arr = s.split(" ");
-    	// 잘린 문자열을 순서대로 처리
+
     	for(int i=0; i<arr.length; i++) {
     		String now = arr[i];
     		
-    		// 문자열의 길이가 0이라면(공백 이라면)
-    		// answer에 " "만 추가
+
     		if(arr[i].length() == 0) {
     			answer += " ";
     		} 
