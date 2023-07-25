@@ -2,7 +2,7 @@ class Solution {
     public int[] solution(String s) {
         int[] answer = new int[s.length()];
         
-        answer[0]=-1;
+        answer[0]=-1;//맨앞 비우기
         for(int i=1;i<s.length();i++) {
         	for(int j=0;j<i;j++) {
         		if(s.charAt(i)==s.charAt(j)) {
